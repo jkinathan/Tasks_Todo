@@ -1,5 +1,5 @@
 <?php
-
+use AppTask;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,21 @@ Route::get('/', function () {
 });
 
 Route::post('/tasks', function (Request $request) {
-    return view('task');
+
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+        ]);
+        if ($validator->fails()) {
+            return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+        }
+        // Create The Task
+        $task = new Task;
+        $task->name = $request->name;
+        $task->save();
+    return redirect('/');
+
 });
 
 Route::delete('/tasks/{id}', function ($id) {

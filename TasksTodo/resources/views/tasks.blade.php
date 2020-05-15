@@ -1,7 +1,9 @@
 @extends('layouts.welcome')
 @section('content')
 <!-- Bootstrap Boilerplate... -->
-<div class="panel-body"> <!-- Display Validation Errors -->
+<div class="panel-body">
+    <!-- Display Validation Errors -->
+    @include('common.errors')
     <!-- New Task Form -->
     <form action="/task" method="POST" class="form-horizontal">
          {{ csrf_field() }}
