@@ -1,5 +1,6 @@
 <?php
-use AppTask;
+use Illuminate\Http\Request;
+use App\Task;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,11 @@ use AppTask;
 */
 
 Route::get('/', function () {
-    return view('tasks');
+    $tasks = Task::orderBy('created_at','asc')->get();
+
+    return view('tasks',[
+        'tasks' => $tasks
+    ]);
 });
 
 Route::post('/tasks', function (Request $request) {
@@ -34,5 +39,8 @@ Route::post('/tasks', function (Request $request) {
 });
 
 Route::delete('/tasks/{id}', function ($id) {
-    //
+    
+    Task::findOrFail($id)->delete();
+    return redirect('/');
 });
+
