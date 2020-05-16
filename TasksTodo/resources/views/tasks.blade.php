@@ -1,6 +1,7 @@
 @extends('layouts.welcome')
 @section('content')
 <!-- Bootstrap Boilerplate... -->
+
 <div class="panel-body">
     <!-- Display Validation Errors -->
     @include('common.errors')
@@ -9,15 +10,15 @@
          {{ csrf_field() }}
          <!-- Task Name -->
          <div class="form-group">
-             <label for="task" class="col-sm-3 control-label">Task</label>
-             <div class="col-sm-6">
+             <label for="task" class="col-sm-3 control-label"><h2>Task</h2></label>
+             <div class="col-sm-12">
                 <input type="text" name="name" id="task-name" class="form-control">
              </div>
          </div>
          <!-- Add Task Button -->
          <div class="form-group">
             <div class="col-sm-offset-3 col-sm-6">
-                <button type="submit" class="btn btn-default">
+                <button type="submit" class="btn btn-primary">
                     <i class="fa fa-plus"></i> Add Task
                 </button>
             </div>
@@ -28,7 +29,7 @@
     @if (count($tasks) > 0)
     <div class="panel panel-default">
         <div class="panel-heading">
-            Current Tasks
+            <h3> <strong> Tasks</strong></h3>
         </div>
         <div class="panel-body">
             <table class="table table-striped task-table">
@@ -52,7 +53,7 @@
                                <form action="/tasks/{{ $task->id }}" method="POST">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <button>Delete Task</button>
+                                <button class="btn btn-danger">Delete Task</button>
                                </form>
                             </td>
                         </td>

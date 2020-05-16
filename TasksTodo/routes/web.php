@@ -1,5 +1,5 @@
 <?php
-use Illuminate\Http\Request;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,11 +12,11 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/',"TasksController@index");
+Route::get('/',"TasksController@index")->middleware('auth');
 
-Route::post('/tasks', "TasksController@store");
+Route::post('/tasks', "TasksController@store")->middleware('auth');
 
-Route::delete('/tasks/{id}',"TasksController@destroy");
+Route::delete('/tasks/{id}',"TasksController@destroy")->middleware('auth');
 
 
 Auth::routes();
