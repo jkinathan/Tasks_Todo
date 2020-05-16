@@ -1,6 +1,6 @@
 <?php
 use Illuminate\Http\Request;
-use App\Task;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,35 +12,13 @@ use App\Task;
 |
 */
 
-Route::get('/', function () {
-    $tasks = Task::orderBy('created_at','asc')->get();
+Route::get('/',"TasksController@index");
 
-    return view('tasks',[
-        'tasks' => $tasks
-    ]);
-});
+Route::post('/tasks', "TasksController@store");
 
-Route::post('/tasks', function (Request $request) {
+Route::delete('/tasks/{id}',"TasksController@destroy");
 
-    $validator = Validator::make($request->all(), [
-        'name' => 'required|max:255',
-        ]);
-        if ($validator->fails()) {
-            return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-        }
-        // Create The Task
-        $task = new Task;
-        $task->name = $request->name;
-        $task->save();
-    return redirect('/');
 
-});
+Auth::routes();
 
-Route::delete('/tasks/{id}', function ($id) {
-    
-    Task::findOrFail($id)->delete();
-    return redirect('/');
-});
-
+Route::get('/home', 'HomeController@index')->name('home');

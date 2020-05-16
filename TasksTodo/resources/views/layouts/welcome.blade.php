@@ -10,6 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
         <style>
             html, body {
                 background-color: #fff;
@@ -64,6 +66,7 @@
         </style>
     </head>
     <body>
+        Yoooo <br>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -82,7 +85,7 @@
             <div class="content">
 
                 @yield('content')
-                
+
             </div>
         </div>
     </body>
