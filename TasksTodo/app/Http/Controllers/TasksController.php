@@ -99,7 +99,8 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-
+        Task::update(request()->validate(['name' => 'required', 'description' => 'required']));
+		return redirect('/tasks/'.$task->id);
     }
 
     /**
