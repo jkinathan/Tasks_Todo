@@ -14,8 +14,9 @@ class TasksController extends Controller
      */
     public function index()
     {
+        $tasskT = Task::all();
         $tasks = Task::orderBy('created_at','asc')->get();
-
+        // dd($tasskT);
         return view('tasks')->with(compact('tasks',$tasks));
     }
 
@@ -49,6 +50,10 @@ class TasksController extends Controller
             $task = new Task;
             $task->name = $request->name;
             $task->save();
+            //or you can use something like this
+            // Task::create([
+			// 	'name' => request('name');
+			// 		]);
         return redirect('/');
 
     }
