@@ -79,7 +79,7 @@
                     <tr>
                         <!-- Task Name -->
                         <td class="table-text">
-                            <div><a href="#" data-toggle="modal" data-target="#myModal">{{ $task->name }}</a></div>
+                            <div><a href="#">{{ $task->name }}</a></div>
                         </td>
                         <td>
                             <!-- TODO: Delete Button -->
