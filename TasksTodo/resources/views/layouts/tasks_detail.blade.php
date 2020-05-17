@@ -18,6 +18,7 @@
         <div class="panel-heading">
             <h3> <strong style="color: blue">{{  Auth::user()->name }}'s Task</strong></h3>
         </div>
+        @include('common.errors')
         <form action="/tasks/{{ $ptask->id }}" method="POST">
             {{ csrf_field() }}
             {{ method_field('PUT') }}

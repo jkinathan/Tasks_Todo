@@ -99,8 +99,9 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Task::update(request()->validate(['name' => 'required', 'description' => 'required']));
-		return redirect('/tasks/'.$task->id);
+        $validatedAttributes = request()->validate(['name'=>'required','description'=>'required']);
+        $tasko = Task::where('id', $id)->update($validatedAttributes);
+		return redirect('/tasks/'.$id);
     }
 
     /**

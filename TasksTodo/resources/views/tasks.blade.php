@@ -29,7 +29,7 @@
 
                     <input type="text" name="name" id="task-name" class="form-control" placeholder="Please enter a task name"  required>
                     <br>
-            
+
                         <textarea rows="3" cols="10" name="description" class="form-control" placeholder="Please enter a task description" required></textarea>
                     </div>
                     <div class="modal-footer">
@@ -120,7 +120,7 @@
                                <form action="/tasks/{{ $task->id }}" method="POST">
                                 {{ csrf_field() }}
                                 {{ method_field('DELETE') }}
-                                <button class="btn btn-danger">Delete Task</button>
+                                <button onclick="sweetalertclick()" class="btn btn-danger">Delete Task</button>
                                </form>
                             </td>
                         </td>
@@ -134,3 +134,9 @@
 </div>
 <!-- TODO: Current Tasks -->
 @endsection
+
+<script>
+    function sweetalertclick(){
+        swal.fire("Deleted!", "Task has been deleted.successfully.", "success");
+    }
+</script>
