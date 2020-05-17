@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Task;
+use App\Auth;
 
 class TasksController extends Controller
 {
@@ -49,6 +50,7 @@ class TasksController extends Controller
             // Create The Task
             $task = new Task;
             $task->name = $request->name;
+            $task->user_id = auth()->id();
             $task->save();
             //or you can use something like this
             // Task::create([
