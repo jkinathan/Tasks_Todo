@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Task;
-use App\Auth;
+use Auth;
 
 class TasksController extends Controller
 {
@@ -16,8 +16,10 @@ class TasksController extends Controller
     public function index()
     {
         $tasskT = Task::all();
-        $tasks = Task::orderBy('created_at','asc')->get();
+        $user = Auth::user(); //get currently logged in user
+        $tasks = Task::where("user_id",$user->id)->orderBy('created_at','asc')->get();
         // dd($tasskT);
+        //get tasks where user_id is equal to the id of the currently logged in user
         return view('tasks')->with(compact('tasks',$tasks));
     }
 
