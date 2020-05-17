@@ -71,7 +71,10 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        //
+        $ptask= Task::find($id);
+        //get task associated with that id
+        // dd($ptask);
+        return view('layouts.tasks_detail',compact('ptask'));
     }
 
     /**
@@ -94,7 +97,7 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+
     }
 
     /**

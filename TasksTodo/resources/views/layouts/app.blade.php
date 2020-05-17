@@ -19,7 +19,7 @@
     <!-- Styles -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js">
-    <link rel="stylesheet" href="sweetalert2.min.css">
+   
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -84,11 +84,6 @@
     {{-- my js --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-    <script src="sweetalert2.min.js"></script>
 
 </body>
 </html>

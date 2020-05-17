@@ -79,7 +79,7 @@
                     <tr>
                         <!-- Task Name -->
                         <td class="table-text">
-                            <div><a href="#">{{ $task->name }}</a></div>
+                            <div><a href="/tasks/{{ $task->id  }}">{{ $task->name }}</a></div>
                         </td>
                         <td>
                             <!-- TODO: Delete Button -->
