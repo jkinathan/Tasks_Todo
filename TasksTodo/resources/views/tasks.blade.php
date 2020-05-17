@@ -1,4 +1,4 @@
-@extends('layouts.welcome')
+@extends('layouts.app')
 @section('content')
 <!-- Bootstrap Boilerplate... -->
 
@@ -29,13 +29,13 @@
     @if (count($tasks) > 0)
     <div class="panel panel-default">
         <div class="panel-heading">
-            <h3> <strong> Tasks</strong></h3>
+            <h3> <strong>{{  Auth::user()->name }}'s Tasks</strong></h3>
         </div>
         <div class="panel-body">
             <table class="table table-striped task-table">
                 <!-- Table Headings -->
                 <thead>
-                    <th>Task</th>
+                    <th> Tasks</th>
                     <th>&nbsp;</th>
                  </thead>
                  <!-- Table Body -->

@@ -21,4 +21,4 @@ Route::delete('/tasks/{id}',"TasksController@destroy")->middleware('auth');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'TasksController@index')->name('home');
