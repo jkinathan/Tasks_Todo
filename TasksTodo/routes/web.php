@@ -16,6 +16,8 @@ Route::get('/',"TasksController@index")->middleware('auth');
 
 Route::post('/tasks', "TasksController@store")->middleware('auth');
 
+Route::put('/tasks/{id}',"TasksController@update")->middleware('auth');
+
 Route::delete('/tasks/{id}',"TasksController@destroy")->middleware('auth');
 
 

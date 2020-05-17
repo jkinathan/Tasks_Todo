@@ -53,6 +53,7 @@ class TasksController extends Controller
             $task = new Task;
             $task->name = $request->name;
             $task->user_id = auth()->id();
+            $task->description = $request->name;
             $task->save();
             //or you can use something like this
             // Task::create([
@@ -93,7 +94,7 @@ class TasksController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       
     }
 
     /**
