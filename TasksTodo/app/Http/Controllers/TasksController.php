@@ -71,10 +71,12 @@ class TasksController extends Controller
      */
     public function show($id)
     {
-        $ptask= Task::find($id);
+        $ptask = Task::find($id);
         //get task associated with that id
         // dd($ptask);
-        return view('layouts.tasks_detail',compact('ptask'));
+        $date = date('D-d-M-Y', strtotime($ptask->created_at));
+        // ddd($date);
+        return view('layouts.tasks_detail',compact('ptask','date'));
     }
 
     /**
