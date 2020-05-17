@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: blue">
                     {{ config('app.name', 'TasksTodo') }}
@@ -76,6 +76,7 @@
         </nav>
 
         <main class="py-4">
+            <br>
             <div class="container">
                 @yield('content')
             </div>

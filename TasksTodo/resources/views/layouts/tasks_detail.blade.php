@@ -5,12 +5,10 @@
 <div class="panel-body">
     <!-- Display Validation Errors -->
     @include('common.errors')
-
+<br>
          <div class="form-group">
              <label for="task" class="col-sm-3 control-label"><h2>Task Details</h2></label>
-             <div class="col-sm-12">
-                <input type="text" placeholder="View the Detailed view of the task below is where we can edit a task" name="name" id="task-name" class="form-control" disabled>
-             </div>
+             
          </div>
 
     <!-- Current Tasks -->
@@ -18,18 +16,18 @@
     <div class="panel panel-default">
         <div class="jumbotron">
         <div class="panel-heading">
-            <h3> <strong style="color: blue">{{  Auth::user()->name }}'s Tasks</strong></h3>
+            <h3> <strong style="color: blue">{{  Auth::user()->name }}'s Task</strong></h3>
         </div>
     <div class="card text-center">
-        <div class="card-header">
+        <div class="card-header alert-primary">
             {{ $ptask->name }}
         </div>
         <div class="card-body">
-        <h5 class="card-title">{{ $ptask->name }}</h5>
+        <h5 class="card-title">Task Description</h5>
         <p class="card-text">{{ $ptask->description }}.</p>
         <a href="#" class="btn btn-warning">Edit Task</a>
         </div>
-        <div class="card-footer text-muted">
+        <div class="card-footer text-muted alert-primary">
             Created on: {{ $date }}
         </div>
     </div>
