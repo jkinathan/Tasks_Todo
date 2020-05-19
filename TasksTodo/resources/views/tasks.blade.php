@@ -136,6 +136,7 @@
 @endsection
 
 <script>
+  //installed sweetalert2 from the documentation for the delete success
     function sweetalertclick(){
         swal.fire("Deleted!", "Task has been deleted.successfully.", "success");
     }
