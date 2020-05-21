@@ -43,6 +43,7 @@ class TasksController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
+            'description' => 'required|max:255',
             ]);
             if ($validator->fails()) {
                 return redirect('/')
