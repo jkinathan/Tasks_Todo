@@ -1,2 +1,3 @@
 # Tasks_Todo
-simple todo in laravel
+###### simple todo web application built in laravel 6 
+Includes all CRUD functionality 
